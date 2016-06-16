@@ -10,7 +10,7 @@ public class Term {
 	}
 	
 	public String toString() {
-		return "Term [coeff=" + coeff + ", exponent=" + exponent + "]";
+		return new String(coeff+ "x^" + exponent);
 	}
 
 	public Term combineLikeTerms(Term t1, Term t2) {
@@ -33,11 +33,11 @@ public class Term {
 		return this.coeff;
 	}
 	
-	public double setCoeff(int newVar) {
+	public int setCoeff(int newVar) {
 		return this.coeff = newVar;
 	}
 	
-	public double getExponent() {
+	public int getExponent() {
 		return this.exponent;
 	}
 	

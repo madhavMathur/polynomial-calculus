@@ -28,13 +28,29 @@ public class Differentiation {
 			terms.add(new Term(coeff, exponent));
 			System.out.println(terms.get(terms.size() - 1));
 		}
-		printTerms();
+		printTerms(terms);
 	}
 	
+	public void simplifyTerms(ArrayList<Term> al) {
+		ArrayList<Term> newList = new ArrayList<Term>();
+		for(int i = 0; i < al.size(); i++) {
+			int counter;
+			int exp = al.get(i).getExponent();
+			int coe = al.get(i).getCoeff();
+			counter = coe;
+			for(int j = i + 1; j < al.size(); j++) {
+				if (al.get(j).getExponent() == exp) {
+					counter += al.get(j).getCoeff();
+					al.remove(j);
+				}
+			}
+			newList.add(new Term(counter, exp));
+		}
+		printTerms(newList);
+	}
 	
-	
-	public void printTerms() {
-		System.out.println("TERMS:");
+	public void printTerms(ArrayList<Term> terms) {
+		System.out.println("\nTERMS:");
 		for (Term t : terms)
 			System.out.print(t + " ");
 	}
