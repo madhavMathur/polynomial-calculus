@@ -10,6 +10,14 @@ public class Term {
 	}
 	
 	public String toString() {
+		if(coeff == 1)
+			return new String("x^" + exponent);
+		if(coeff == 0)
+			return "0";
+		if(exponent == 0)
+			return Integer.toString(coeff);
+		if(exponent == 1)
+			return new String(coeff + "x");
 		return new String(coeff+ "x^" + exponent);
 	}
 
