@@ -1,10 +1,10 @@
 
 public class Term {
 	
-	private int coeff;
-	private int exponent;
+	private double coeff;
+	private double exponent;
 	
-	public Term(int coeff, int exponent) {
+	public Term(double coeff, double exponent) {
 		this.coeff = coeff;
 		this.exponent = exponent;
 	}
@@ -15,7 +15,7 @@ public class Term {
 		if(coeff == 0)
 			return "0";
 		if(exponent == 0)
-			return Integer.toString(coeff);
+			return Double.toString(coeff);
 		if(exponent == 1)
 			return new String(coeff + "x");
 		return new String(coeff+ "x^" + exponent);
@@ -37,19 +37,19 @@ public class Term {
 		return false;
 	}
 	
-	public int getCoeff() {
+	public double getCoeff() {
 		return this.coeff;
 	}
 	
-	public int setCoeff(int newVar) {
+	public double setCoeff(double newVar) {
 		return this.coeff = newVar;
 	}
 	
-	public int getExponent() {
+	public double getExponent() {
 		return this.exponent;
 	}
 	
-	public int setExponent(int newVar) {
+	public double setExponent(double newVar) {
 		return this.exponent = newVar;
 	}
 }

@@ -34,8 +34,8 @@ public class Differentiation {
 			s = in.nextLine();
 			if(s.equals("-1")) 
 				break;
-			int coeff = Integer.parseInt(s.substring(0, s.indexOf("x")));
-			int exponent = Integer.parseInt(s.substring(s.indexOf("^") + 1));
+			double coeff = Double.parseDouble(s.substring(0, s.indexOf("x")));
+			double exponent = Double.parseDouble(s.substring(s.indexOf("^") + 1));
 			terms.add(new Term(coeff, exponent));
 		}
 		System.out.print("f(x): " + toString(terms));
@@ -44,9 +44,9 @@ public class Differentiation {
 	public ArrayList<Term> simplifyTerms(ArrayList<Term> al) {
 		ArrayList<Term> newList = new ArrayList<Term>();
 		for(int i = 0; i < al.size(); i++) {
-			int counter;
-			int exp = al.get(i).getExponent();
-			int coe = al.get(i).getCoeff();
+			double counter;
+			double exp = al.get(i).getExponent();
+			double coe = al.get(i).getCoeff();
 			counter = coe;
 			for(int j = i + 1; j < al.size(); j++) {
 				if (al.get(j).getExponent() == exp) {
